@@ -8,6 +8,31 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Custom thin scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(45 20% 96%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(195 50% 60%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(195 60% 45%);
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(195 50% 60%) hsl(45 20% 96%);
+}
+
 @layer base {
   :root {
     --background: 45 20% 96%;
