@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import heroBali from "@/assets/hero-bali.jpg";
+const heroBoracay = "/hero/1.jpg";
 
 const HeroSection = () => {
   return (
@@ -7,9 +7,9 @@ const HeroSection = () => {
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroBali})` }}
+        style={{ backgroundImage: `url(${heroBoracay})` }}
       >
-        <div className="absolute inset-0 bg-sage/60" />
+        <div className="absolute inset-0 bg-black/30" />
       </div>
 
       {/* Content */}
@@ -19,10 +19,10 @@ const HeroSection = () => {
             It's time to
           </p>
           <h1 className="text-cream font-display text-6xl md:text-7xl lg:text-8xl font-normal mb-6 opacity-0 animate-fade-up animation-delay-100">
-            Visit Bali
+            Visit Boracay
           </h1>
           <p className="text-cream/85 text-base md:text-lg leading-relaxed mb-10 max-w-md opacity-0 animate-fade-up animation-delay-200">
-            Crave new adventures, mystical experiences and relaxing beaches? You need to visit Bali. 
+            Crave new adventures, pristine white sand beaches and crystal-clear waters? You need to visit Boracay. 
             We make sure that you'll get an experience you'll never forget.
           </p>
           <div className="opacity-0 animate-fade-up animation-delay-300">

@@ -7,7 +7,7 @@ const Footer = () => {
             href="/" 
             className="text-cream font-display text-2xl tracking-widest hover:opacity-80 transition-opacity"
           >
-            POVEDA
+            MARILAG
           </a>
 
           <nav className="flex flex-wrap items-center justify-center gap-6 md:gap-8">
@@ -23,7 +23,7 @@ const Footer = () => {
           </nav>
 
           <p className="text-cream/60 text-sm">
-            © 2025 Poveda. All rights reserved.
+            © 2025 Marilag. All rights reserved.
           </p>
         </div>
       </div>

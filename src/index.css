@@ -4,46 +4,50 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 @layer base {
   :root {
     --background: 45 20% 96%;
-    --foreground: 90 15% 20%;
+    --foreground: 200 20% 20%;
 
     --card: 45 20% 98%;
-    --card-foreground: 90 15% 20%;
+    --card-foreground: 200 20% 20%;
 
     --popover: 45 20% 98%;
-    --popover-foreground: 90 15% 20%;
+    --popover-foreground: 200 20% 20%;
 
-    --primary: 90 18% 38%;
-    --primary-foreground: 45 20% 96%;
+    --primary: 195 70% 40%;
+    --primary-foreground: 45 30% 97%;
 
-    --secondary: 45 15% 92%;
-    --secondary-foreground: 90 15% 25%;
+    --secondary: 45 25% 92%;
+    --secondary-foreground: 195 50% 25%;
 
-    --muted: 45 10% 90%;
-    --muted-foreground: 90 10% 45%;
+    --muted: 45 15% 90%;
+    --muted-foreground: 200 15% 40%;
 
-    --accent: 90 18% 38%;
-    --accent-foreground: 45 20% 96%;
+    --accent: 195 70% 40%;
+    --accent-foreground: 45 30% 97%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 90 10% 75%;
-    --input: 90 10% 75%;
-    --ring: 90 18% 38%;
+    --border: 195 20% 75%;
+    --input: 195 20% 75%;
+    --ring: 195 70% 40%;
 
     --radius: 0rem;
 
-    /* Custom tokens */
-    --sage: 90 18% 38%;
-    --sage-light: 90 15% 50%;
-    --sage-dark: 90 20% 28%;
-    --cream: 45 20% 96%;
-    --cream-dark: 45 15% 90%;
-    --earth: 30 20% 35%;
-    --earth-light: 30 15% 50%;
+    /* Custom tokens - Beach color scheme */
+    --sage: 195 70% 40%;
+    --sage-light: 195 60% 55%;
+    --sage-dark: 195 75% 30%;
+    --cream: 40 35% 96%;
+    --cream-dark: 35 25% 90%;
+    --earth: 25 30% 40%;
+    --earth-light: 25 25% 55%;
 
     --font-display: 'Playfair Display', serif;
     --font-body: 'Inter', sans-serif;
@@ -59,33 +63,33 @@
   }
 
   .dark {
-    --background: 90 20% 8%;
-    --foreground: 45 20% 96%;
+    --background: 200 30% 8%;
+    --foreground: 45 30% 96%;
 
-    --card: 90 20% 12%;
-    --card-foreground: 45 20% 96%;
+    --card: 200 25% 12%;
+    --card-foreground: 45 30% 96%;
 
-    --popover: 90 20% 12%;
-    --popover-foreground: 45 20% 96%;
+    --popover: 200 25% 12%;
+    --popover-foreground: 45 30% 96%;
 
-    --primary: 90 18% 50%;
-    --primary-foreground: 90 20% 8%;
+    --primary: 195 65% 50%;
+    --primary-foreground: 200 30% 8%;
 
-    --secondary: 90 15% 18%;
-    --secondary-foreground: 45 20% 96%;
+    --secondary: 200 20% 18%;
+    --secondary-foreground: 45 30% 96%;
 
-    --muted: 90 15% 18%;
-    --muted-foreground: 45 10% 65%;
+    --muted: 200 20% 18%;
+    --muted-foreground: 45 15% 65%;
 
-    --accent: 90 18% 50%;
-    --accent-foreground: 90 20% 8%;
+    --accent: 195 65% 50%;
+    --accent-foreground: 200 30% 8%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 90 15% 25%;
-    --input: 90 15% 25%;
-    --ring: 90 18% 50%;
+    --border: 200 20% 25%;
+    --input: 200 20% 25%;
+    --ring: 195 65% 50%;
     
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -184,4 +188,49 @@
 
 .animation-delay-600 {
   animation-delay: 600ms;
+}
+
+/* Scroll reveal animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal-left.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal-right.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal-scale.revealed {
+  opacity: 1;
+  transform: scale(1);
 }

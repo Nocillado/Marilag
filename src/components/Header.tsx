@@ -1,8 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navLinks = [
     { label: "Pricing", href: "#pricing" },
@@ -12,13 +22,13 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 px-6 md:px-12 py-6">
+    <header className={`fixed top-0 left-0 right-0 z-50 px-6 md:px-12 py-6 transition-all duration-300 ${isScrolled ? "bg-sage/95 backdrop-blur-sm shadow-md" : ""}`}>
       <nav className="flex items-center justify-between max-w-7xl mx-auto">
         <a 
           href="/" 
           className="text-cream font-display text-2xl tracking-widest hover:opacity-80 transition-opacity"
         >
-          POVEDA
+          MARILAG
         </a>
 
         {/* Desktop Navigation */}

@@ -1,35 +1,42 @@
 import ExperienceCard from "./ExperienceCard";
-import adventureImg from "@/assets/adventure.jpg";
-import cultureImg from "@/assets/culture.jpg";
-import relaxationImg from "@/assets/relaxation.jpg";
+import { useReveal } from "@/hooks/useReveal";
 
 const ExperiencesSection = () => {
+  const { ref: titleRef, isRevealed: titleRevealed } = useReveal(0.2);
+  const { ref: cardsRef, isRevealed: cardsRevealed } = useReveal(0.1);
+
   const experiences = [
     {
-      image: adventureImg,
+      image: "/hero/4.jpg",
       title: "Adventure",
-      buttonText: "Explore Bali",
+      buttonText: "Explore Boracay",
     },
     {
-      image: cultureImg,
+      image: "/hero/5.jpg",
       title: "Culture",
-      buttonText: "Understand Bali",
+      buttonText: "Discover Boracay",
     },
     {
-      image: relaxationImg,
+      image: "/hero/6.jpg",
       title: "Relaxation",
-      buttonText: "Relax in Bali",
+      buttonText: "Relax in Boracay",
     },
   ];
 
   return (
     <section className="py-24 md:py-32 bg-background" id="visit">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <h2 className="text-foreground font-display text-3xl md:text-4xl lg:text-5xl tracking-widest uppercase text-center mb-16 md:mb-20">
+        <h2
+          ref={titleRef}
+          className={`text-foreground font-display text-3xl md:text-4xl lg:text-5xl tracking-widest uppercase text-center mb-16 md:mb-20 reveal ${titleRevealed ? "revealed" : ""}`}
+        >
           Licence to Live
         </h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+
+        <div
+          ref={cardsRef}
+          className={`grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 reveal ${cardsRevealed ? "revealed" : ""}`}
+        >
           {experiences.map((exp, index) => (
             <ExperienceCard
               key={exp.title}
